@@ -38,6 +38,7 @@ dependencies:
   lottie: ^1.2.1
   firebase_core: ^1.10.6
   flutter_screenutil: ^5.0.1+2
+  syncfusion_flutter_charts: ^19.4.40
 
 dev_dependencies:
   flutter_test:

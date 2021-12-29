@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/home.dart';
 import 'package:get/get.dart';
-q
 import 'package:lottie/lottie.dart';
 
 
@@ -20,10 +19,12 @@ class SecondPage extends StatelessWidget {
             Lottie.asset('assets/lottie/fire.json'),
             TextButton(onPressed: (){
               Get.back();},
-                child: Text("뒤로 가기"))
+                child: Text("뒤로 가기")),
+
           ],
         ),
       )
     );
   }
 }
+

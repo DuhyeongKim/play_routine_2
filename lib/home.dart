@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/second.dart';
 import 'package:flutter_app/pages/simple_state_manage.dart';
 import 'package:get/get.dart';
-
+import 'package:flutter_app/pages/syncfusion.dart';
 import 'pages/first.dart';
+import 'package:flutter_app/pages/progressbar.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -34,6 +35,14 @@ class Home extends StatelessWidget {
               Get.to(SimpleState());
             }
               , child: Text("단순상태관리"),),
+            TextButton(onPressed: (){
+              Get.to(SyncFusion());
+            }
+              , child: Text("Syncfusion"),),
+            TextButton(onPressed: (){
+              Get.to(ProgressBar());
+            }
+              , child: Text("progress bar"),),
 
           ],
         ),

@@ -44,6 +44,11 @@ class _SyncFusionState extends State<SyncFusion> {
                   child: SfSparkLineChart.custom(
                     trackball: SparkChartTrackball(
                       activationMode: SparkChartActivationMode.tap),
+                    marker: SparkChartMarker(
+                      displayMode: SparkChartMarkerDisplayMode.all),
+                    labelDisplayMode: SparkChartLabelDisplayMode.all,
+                    xValueMapper: (int index) => data[index].continent,
+                    yValueMapper: (int index) => data[index].gdp,
                     ),
                   )
                 )

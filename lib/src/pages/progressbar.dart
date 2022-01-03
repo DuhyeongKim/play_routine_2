@@ -33,12 +33,12 @@ class _ProgressBarState extends State<ProgressBar> {
 
   Widget _buildTextLabels(BuildContext context) {
     final Brightness _brightness = Theme.of(context).brightness;
-    const double _deliveryStatus = 20;
+    double _deliveryStatus = progressValue;
     const double _orderState = 0;
-    const double _packedState = 10;
-    const double _shippedState = 20;
-    const double _deliveredState = 30;
-    const Color _activeColor =
+    const double _packedState = 30;
+    const double _shippedState = 60;
+    const double _deliveredState = 90;
+    Color _activeColor =
     _deliveryStatus > _orderState ? Color(0xff0DC9AB) : Color(0xffD1D9DD);
     final Color _inactiveColor = _brightness == Brightness.dark
         ? const Color(0xff62686A)
@@ -51,22 +51,22 @@ class _ProgressBarState extends State<ProgressBar> {
               ? LinearGaugeOrientation.horizontal
               : LinearGaugeOrientation.vertical,
           minimum: 0,
-          maximum: 30,
+          maximum: 90,
           labelOffset: 24,
           isAxisInversed: !_isHorizontalOrientation,
           showTicks: false,
           onGenerateLabels: () {
             return <LinearAxisLabel>[
-              const LinearAxisLabel(text: 'Ordered', value: 0),
-              const LinearAxisLabel(text: 'Packed', value: 10),
-              const LinearAxisLabel(text: 'Shipped', value: 20),
-              const LinearAxisLabel(text: 'Delivered', value: 30),
+              const LinearAxisLabel(text: '팔굽혀펴기', value: _orderState),
+              const LinearAxisLabel(text: '플랭크', value: _packedState),
+              const LinearAxisLabel(text: '스쿼트', value: _shippedState),
+              const LinearAxisLabel(text: '버핏', value: _deliveredState),
             ];
           },
           axisTrackStyle: LinearAxisTrackStyle(
             color: _inactiveColor,
           ),
-          barPointers: const <LinearBarPointer>[
+          barPointers: <LinearBarPointer>[
             LinearBarPointer(
               value: _deliveryStatus,
               color: _activeColor,
@@ -86,7 +86,7 @@ class _ProgressBarState extends State<ProgressBar> {
                     color: Colors.amberAccent,
                     border: Border.all(width: 4, color: _activeColor),
                     borderRadius: const BorderRadius.all(Radius.circular(12))),
-                child: const Center(
+                child: Center(
                   child:
                   Icon(Icons.check_rounded, size: 14, color: _activeColor),
                 ),
@@ -103,7 +103,7 @@ class _ProgressBarState extends State<ProgressBar> {
                     color: Colors.deepPurple,
                     border: Border.all(width: 4, color: _activeColor),
                     borderRadius: const BorderRadius.all(Radius.circular(12))),
-                child: const Center(
+                child: Center(
                   child:
                   Icon(Icons.check_rounded, size: 14, color: _activeColor),
                 ),
@@ -120,7 +120,7 @@ class _ProgressBarState extends State<ProgressBar> {
                     color: Colors.black,
                     border: Border.all(width: 4, color: _activeColor),
                     borderRadius: const BorderRadius.all(Radius.circular(12))),
-                child: const Center(
+                child: Center(
                   child:
                   Icon(Icons.check_rounded, size: 14, color: _activeColor),
                 ),
@@ -191,15 +191,20 @@ class _ProgressBarState extends State<ProgressBar> {
     return Container(
       child: SfLinearGauge(
           minimum: 0.0,
-          maximum: 10.0,
-          markerPointers: [
-
+          maximum: 100.0,
+          animateAxis: true,
+          barPointers: <LinearBarPointer>[
+            LinearBarPointer(
+              value: progressValue,
+              position: LinearElementPosition.inside,
+              color: Colors.deepPurple,
+            )
           ],
           orientation: LinearGaugeOrientation.horizontal,
           majorTickStyle: LinearTickStyle(length: 10),
           axisLabelStyle: TextStyle(fontSize: 10.0, color: Colors.black),
           axisTrackStyle: LinearAxisTrackStyle(
-              color: Colors.deepPurple,
+              color: Colors.black,
               edgeStyle: LinearEdgeStyle.bothFlat,
               thickness: 15.0,
               borderColor: Colors.grey)),

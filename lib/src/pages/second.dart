@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/home.dart';
+import 'package:flutter_app/src/pages/home.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 

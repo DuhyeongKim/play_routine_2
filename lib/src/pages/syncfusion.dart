@@ -20,14 +20,14 @@ class _SyncFusionState extends State<SyncFusion> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Syncfusion Page"),),
+        appBar: AppBar(title: Text("Syncfusion_Page"),),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SfCartesianChart(
                 primaryXAxis: CategoryAxis(),
-                title: ChartTitle(text: 'Half yearly sales analysis '),
+                title: ChartTitle(text: 'Half analysis '),
                 legend: Legend(isVisible: true),
                 tooltipBehavior: TooltipBehavior(enable: true),
                 series: <ChartSeries<GDPData, String>>[

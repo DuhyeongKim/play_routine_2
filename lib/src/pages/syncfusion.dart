@@ -8,7 +8,7 @@ class SyncFusion extends StatefulWidget {
   @override
   _SyncFusionState createState() => _SyncFusionState();
 }
-
+// 주간 통계를 위한 테스트
 class _SyncFusionState extends State<SyncFusion> {
   List<GDPData> data = [
       GDPData('Ocean', 1600),

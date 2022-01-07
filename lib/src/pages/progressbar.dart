@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 import 'dart:async';
 
-
+//서로 다른 타입의 프로그래스 바 테스트
 class ProgressBar extends StatefulWidget {
   const ProgressBar({Key? key}) : super(key: key);
 
@@ -14,9 +14,11 @@ class _ProgressBarState extends State<ProgressBar> {
 
   bool _isHorizontalOrientation = true;
 
-  double progressValue = 0;
+  double progressValue = 0; // 시작하는 프로그래스 값
   double _size = 150;
   late Timer _timer;
+
+  //0부터 시작해서 차오르는 프로그래스 바를 위한 초기화
   @override
   void initState() {
     super.initState();
